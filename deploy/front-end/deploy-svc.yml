@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end
+  labels:
+    name: front-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       service: front-end
+  template:
+    metadata:
+      labels:
+        service: front-end
+    spec:
+      containers:
+      - image: quanlh0604/frontend:1.0.2
+        name: front-end
+        imagePullPolicy: Always          
+        resources:
+          limits:
+            memory: "2048Mi"
+            cpu: "700m"       
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: front-end
+  name: frontend
+spec:
+  ports:
+  - name: "8100"
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+  selector:
+    service: front-end
