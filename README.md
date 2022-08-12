@@ -1,3 +1,18 @@
+
+Frontend - link :http://a5b774a64a34c47c1a4e922b956268bc-40279856.us-east-1.elb.amazonaws.com/
+
+Backend - Link : http://abfd7a487e1a54ac7839544242373ed5-690976954.us-east-1.elb.amazonaws.com/api/v0/feed
+
+
+
+
+
+
+
+
+
+
+
 # Udagram Image Filtering Application
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
